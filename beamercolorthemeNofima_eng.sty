@@ -1,0 +1,41 @@
+\mode<presentation>
+
+% Color definitions RGB
+% NMBU colors
+\definecolor{nofimablue}{RGB}{45,48,101}
+\colorlet{nofimalightblue}{nofimablue!20} % 20% of the base color
+\definecolor{nofimagreen}{RGB}{128,188,0}
+\colorlet{nofimalightgreen}{nofimagreen!20}
+\definecolor{nofimaorange}{RGB}{236,119,0}
+\definecolor{nofimared}{RGB}{196,813,60}
+\definecolor{nofimagray}{RGB}{122,2151,171}
+
+% Custom colors
+\definecolor{framebackground}{RGB}{255,255,255}
+\definecolor{softblack}{HTML}{222222}
+
+% Add CMYK definitions to be used before printing
+
+% Settings
+\setbeamercolor*{title page header}{fg=white}
+\setbeamercolor*{author}{fg=white}
+\setbeamercolor*{date}{fg=white}
+\setbeamercolor*{frametitle}{fg=nofimablue}
+\setbeamercolor*{normal text}{fg=softblack}
+\setbeamercolor*{caption name}{fg=nofimablue}
+\setbeamercolor*{itemize item}{fg=nofimablue}
+\setbeamercolor*{itemize subitem}{fg=nofimalightblue}
+
+% block color settings
+\setbeamercolor*{block title}{fg=white,bg=nofimablue}
+\setbeamercolor*{block body}{parent=normal text,bg=nofimalightblue,fg=softblack}
+
+\setbeamercolor*{block title example}{fg=black,bg=nofimalightgreen}
+\setbeamercolor*{block body example}{parent=normal text,bg=nofimalightblue, fg=softblack}
+
+\setbeamercolor*{block title alerted}{fg=white,bg=nofimaorange}
+\setbeamercolor*{block body alerted}{parent=normal text,bg=nofimalightblue,fg=softblack}
+
+
+\mode
+<all>

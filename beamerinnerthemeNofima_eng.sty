@@ -1,0 +1,66 @@
+\mode<presentation>
+
+% Define the background. The background is different depending on the page number
+\setbeamertemplate{background}{
+  \begin{tikzpicture}
+    \useasboundingbox (0,0) rectangle(\the\paperwidth,\the\paperheight);
+
+    \ifnum\thepage>0\relax%
+      \fill[color=nofimablue] (0,0) rectangle (\the\paperwidth,\the\paperheight);
+    \fi
+    
+    \ifnum\thepage>1\relax%
+      \draw[white] (0.1\paperwidth,1) -- (0.92\paperwidth,1);
+      \node[white] at (0.74\paperwidth,0.55) {\scriptsize Nofima AS};
+      \node[anchor=north east] (logo) at (\paperwidth,\paperheight)
+      {\includegraphics[scale=0.10]{Logo_hvit.eps}};
+    \fi
+    
+    \ifnum\thepage>2\relax%
+      \fill[framebackground] (0,0) rectangle(\the\paperwidth,\the\paperheight);
+      \node[anchor=north east] (logo) at (\paperwidth,\paperheight)
+      {\includegraphics[scale=0.15]{Logo-farger_CMYK.eps}};
+      
+      % If you want something that looks like a footer
+      \draw[nofimablue] (0.08\paperwidth,1) -- (0.92\paperwidth,1);
+      \node[nofimablue] at (0.1\paperwidth,0.55) {\scriptsize \insertframenumber};
+      \node[nofimablue] at (0.74\paperwidth,0.55) {\scriptsize Nofima AS};
+    \fi
+  \end{tikzpicture}
+}
+
+% Set \titlepage command
+\defbeamertemplate*{title page}{Nofima AS}[1][]{
+  \begin{tikzpicture}
+    \useasboundingbox (0,0) rectangle (\the\paperwidth,\the\paperheight);
+
+    \ifnum\thepage=1\relax%
+    \node[] (logo) at (0.4\paperwidth,0.5\paperheight)
+    {\includegraphics[scale=0.3]{Logo_hvit.eps}};
+    \fi
+    
+    \ifnum\thepage>1\relax%
+    % \node[anchor=north east,draw] (logo) at (\paperwidth,\paperheight)
+    % {\includegraphics[scale=0.5]{Nofima_hvit.eps}};
+    % \node[anchor=north west,draw] (logo) at (0\paperwidth,0.2\paperheight)
+    % {\includegraphics[scale=0.5]{Nofima_hvit.eps}};
+    % \node[anchor=north east,draw] (logo) at (0.8\paperwidth,\paperheight)
+    % {\includegraphics[scale=0.5]{Logo-farger_RGB.eps}};
+    % \node[anchor=north east,draw] (logo) at (0.6\paperwidth,\paperheight)
+    % {\includegraphics[scale=0.5]{Logo-farger_CMYK.eps}};
+
+    \node[white,text width=8cm,anchor=south west,] at
+    (0.02\paperwidth,0.6\paperheight) {\LARGE \textbf{\inserttitle}};
+
+    \node[white,text width=8cm,anchor=south west,] at
+    (0.02\paperwidth,0.5\paperheight) {\normalsize \insertauthor};
+
+    \node[white,text width=8cm,anchor=south west,] at
+    (0.02\paperwidth,0.435\paperheight) {\normalsize \insertdate};
+
+    \fi
+  \end{tikzpicture}
+}
+
+\mode
+<all>
